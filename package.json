@@ -1,0 +1,18 @@
+{
+  "name": "distF4Subject",
+  "version": "1.0.0",
+  "description": "This mini programme is for Secondary School in Hong Kong, NSS subject selection.",
+  "main": "main.js",
+  "dependencies": {
+    "colors": "^1.1.0",
+    "json2csv": "^2.3.0",
+    "lodash": "^3.9.3",
+    "messageformat": "^0.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cyrus Ngan",
+  "license": "ISC"
+}
