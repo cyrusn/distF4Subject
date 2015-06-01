@@ -14,7 +14,7 @@ distF4Subject will distribute subject to every student who use the `f4SubjectSel
   + `./data/positionInForm.json`
     * In fairness, position in form shouldn't be duplicated.
     * please see below for format of `positionInForm.json`
-- customise class size of each group in `classSize.json`
+- customise class size of each group in `class-size.json`
 - run `node main.js`
 
 # Result
@@ -102,4 +102,3 @@ this programme will only distribute subject to the student who *confirmed* the f
 }, ...
 ]
 ```
-

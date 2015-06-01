@@ -1,5 +1,4 @@
-// set the subject size here
-module.exports = {
+{
     "group1": {
         "phy": 19,
         "bio": 19,
@@ -18,4 +17,4 @@ module.exports = {
         "geog": 21,
         "ict2": 20
     }
-};
+}

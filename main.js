@@ -4,12 +4,9 @@ var _ = require('lodash');
 var messageFormat = require('messageformat');
 var colors = require('colors');
 
-var StudentChoices = require('./data/downloadData.json');
-var Positions = require('./data/positionInForm.json');
-
 var Keys = require('./keys.js');
-var maxGroupOneClassSizes = require('./classSize.js').group1;
-var maxGroupTwoClassSizes = require('./classSize.js').group2;
+var maxGroupOneClassSizes = require('./class-size.json').group1;
+var maxGroupTwoClassSizes = require('./class-size.json').group2;
 
 var currentGroupOneClassSizes = {
     "phy": 0,
