@@ -18,4 +18,4 @@ module.exports = {
         "geog": 21,
         "ict2": 20
     }
-}
+};

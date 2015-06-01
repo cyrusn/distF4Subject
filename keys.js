@@ -52,4 +52,4 @@ module.exports = {
         "va+hist",
         "va+ict2"
     ]
-}
+};
