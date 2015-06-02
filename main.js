@@ -1,8 +1,12 @@
 var fs = require('fs');
 var json2csv = require('json2csv');
+var csvjson = require('csvjson');
 var _ = require('lodash');
 var messageFormat = require('messageformat');
 var colors = require('colors');
+
+var StudentChoices = require('./data/downloadData.json');
+var Positions = csvjson.toObject('./data/positionInForm.csv').output;
 
 var Keys = require('./keys.js');
 var maxGroupOneClassSizes = require('./class-size.json').group1;
@@ -233,8 +237,9 @@ function genStat (detail){
 }
 
 // if need to show all fields, use the defaultField instead.
-// var defaultField = ["_id", "classNo", "name", "cname", "isConfirmed", "D&T", "Cookery", "Music", "phy+chem", "phy+cscb", "phy+econ", "phy+geog", "phy+hist", "phy+ict2", "bio+chem", "bio+cscp", "bio+econ", "bio+geog", "bio+hist", "bio+ict2", "bafs+chem", "bafs+cscb", "bafs+cscp", "bafs+econ", "bafs+geog", "bafs+hist", "bafs+ict2", "ths+chem", "ths+cscb", "ths+cscp", "ths+econ", "ths+geog", "ths+hist", "ths+ict2", "chist+chem", "chist+cscb", "chist+cscp", "chist+econ", "chist+geog", "chist+hist", "chist+ict2", "ict1+chem", "ict1+cscb", "ict1+cscp", "ict1+econ", "ict1+geog", "ict1+hist", "va+chem", "va+cscb", "va+cscp", "va+econ", "va+geog", "va+hist", "va+ict2", "x1", "x2", "positionInX1", "positionInX2", "positionInChoices", "position" ];
-var field = ["_id", "classNo", "name", "isConfirmed", "x1", "x2", "positionInX1", "positionInX2", "positionInChoices", "position" ];
+var defaultField = ["_id", "classNo", "name", "isConfirmed", "D&T", "Cookery", "Music", "phy+chem", "phy+cscb", "phy+econ", "phy+geog", "phy+hist", "phy+ict2", "bio+chem", "bio+cscp", "bio+econ", "bio+geog", "bio+hist", "bio+ict2", "bafs+chem", "bafs+cscb", "bafs+cscp", "bafs+econ", "bafs+geog", "bafs+hist", "bafs+ict2", "ths+chem", "ths+cscb", "ths+cscp", "ths+econ", "ths+geog", "ths+hist", "ths+ict2", "chist+chem", "chist+cscb", "chist+cscp", "chist+econ", "chist+geog", "chist+hist", "chist+ict2", "ict1+chem", "ict1+cscb", "ict1+cscp", "ict1+econ", "ict1+geog", "ict1+hist", "va+chem", "va+cscb", "va+cscp", "va+econ", "va+geog", "va+hist", "va+ict2", "x1", "x2", "positionInX1", "positionInX2", "positionInChoices", "position" ];
+// var field = ["_id", "classNo", "name", "isConfirmed", "x1", "x2", "positionInX1", "positionInX2", "positionInChoices", "position" ];
+var field = defaultField;
 fs.writeFileSync("./result/result.json", JSON.stringify(finalResult, null, "\t"));
 
 // convert result from json to csv format

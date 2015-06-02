@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "colors": "^1.1.0",
+    "csvjson": "^1.0.5",
     "json2csv": "^2.3.0",
     "lodash": "^3.9.3",
     "messageformat": "^0.2.2"

@@ -11,9 +11,9 @@ distF4Subject will distribute subject to every student who use the `f4SubjectSel
     * the json file download from `f4SubjectSelection` programme
     * or see the following example.
     * remove dummy and teacher account before use.
-  + `./data/positionInForm.json`
+  + `./data/positionInForm.csv`
     * In fairness, position in form shouldn't be duplicated.
-    * please see below for format of `positionInForm.json`
+    * please see below for format of `positionInForm.csv`
 - customise class size of each group in `class-size.json`
 - run `node main.js`
 
@@ -82,23 +82,12 @@ this programme will only distribute subject to the student who *confirmed* the f
 ]
 ```
 
-```js
-// example of positionInForm.json
-[{
-    "_id": "lp1234567",
-    "position": 1
-}, {
-    "_id": "lp1234576",
-    "position": 2
-}, {
-    "_id": "lp1234675",
-    "position": 3
-}, {
-    "_id": "lp1234765",
-    "position": 4
-}, {
-    "_id": "lp1234756",
-    "position": 5
-}, ...
-]
+``` csv
+// example of positionInForm.csv
+_id,position
+lp1234567,1
+lp1234576,2
+lp1234675,3
+...
 ```
+
