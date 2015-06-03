@@ -10,10 +10,16 @@ lib-cov
 pids
 logs
 
-result
-data
+# result
+result/
+
+# data
+data/
+backup
 
 npm-debug.log
 node_modules
 
+# dev
 test.js
+TODO.md

@@ -3,22 +3,23 @@ This mini programme is for Secondary School in Hong Kong, NSS subject selection.
 distF4Subject will distribute subject to every student who use the `f4SubjectSelection`.
 
 # Preparation
-- install node.js
+- install `node.js`
+    + [Node.js](https://nodejs.org/)
 - run `npm install`
-- create an empty folder named as `result`
 - prepare the following files
   + `./data/downloadData.json`
-    * the json file download from `f4SubjectSelection` programme
-    * or see the following example.
-    * remove dummy and teacher account before use.
-  + `./data/positionInForm.csv`
-    * In fairness, position in form shouldn't be duplicated.
-    * please see below for format of `positionInForm.csv`
-- customise class size of each group in `class-size.json`
+    * which is the json file download from `f4SubjectSelection` programme
+    * or create as the following example.
+    * ***remove*** dummy and teacher account.
+  + `./data/studentRank.csv`
+    * In fairness, rank in form shouldn't be duplicated.
+    * please see below for format of `./data/studentRank.csv`
+- customise capacity of each subjects in `./data/subjectCapacity.json`
 - run `node main.js`
 
 # Result
-this programme will only distribute subject to the student who *confirmed* the form and have `position in form`
+this programme will only distribute subject to the student who *confirmed* the form and have `rank`
+`result.csv` and `statistic.md` will be generated in `./result` folder
 
 # Example
 ```js
@@ -83,8 +84,8 @@ this programme will only distribute subject to the student who *confirmed* the f
 ```
 
 ``` csv
-// example of positionInForm.csv
-_id,position
+// example of studentRank.csv
+_id,rank
 lp1234567,1
 lp1234576,2
 lp1234675,3
