@@ -85,7 +85,7 @@ this programme will only distribute subject to the student who *confirmed* the f
 
 ``` csv
 // example of studentRank.csv
-_id,rank
+_id,rank+
 lp1234567,1
 lp1234576,2
 lp1234675,3

@@ -8,7 +8,8 @@ var colors        = require('colors');
 var StudentPriorities = require('./data/downloadData.json');
 
 // array of students id ordered by rank.
-var StudentRank       = _.pluck(csvjson.toObject('./data/studentRank.csv').output, '_id');
+// https://www.npmjs.com/package/csvjson#convert-csv-data-to-schema-json-object
+var StudentRank       = _.pluck(_.sortBy(csvjson.toSchemaObject('./data/studentRank.csv').output,"rank"), '_id');
 var SubjectCombo      = require('./data/subjectCombo.json');
 var groupOneCapacity  = require('./data/subjectCapacity.json').group1;
 var groupTwoCapacity  = require('./data/subjectCapacity.json').group2;
