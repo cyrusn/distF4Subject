@@ -1,20 +1,20 @@
 {
     "group1": {
-        "phy": 20,
-        "bio": 23,
-        "bafs": 17,
-        "chist": 17,
-        "ths": 24,
-        "ict1": 17,
-        "va": 13
+        "phy": 18,
+        "bio": 20,
+        "bafs": 19,
+        "chist": 20,
+        "ths": 19,
+        "ict1": 20,
+        "va": 17
     },
     "group2": {
-        "chem": 24,
-        "cscb": 10,
-        "cscp": 9,
-        "econ": 24,
-        "hist": 26,
-        "geog": 23,
-        "ict2": 15
+        "chem": 23,
+        "cscb": 14,
+        "cscp": 15,
+        "econ": 23,
+        "hist": 21,
+        "geog": 20,
+        "ict2": 17
     }
 }

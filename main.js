@@ -48,7 +48,7 @@ function sortStudentsByRank(orders, students) {
             .remove(function(sts) {
                 // return sts.isConfirmed &&
                 //       (sts.rank !== undefined) &&
-              return /lp[0-9]{7}/.test(sts._id);
+              return /lp[0-9]{7}/.test(sts._id) && (sts.rank !== 0 );
             })
             .sortBy("rank")
             .value();
