@@ -1,20 +1,22 @@
 {
     "group1": {
         "phy": 18,
-        "bio": 20,
+        "bio": 22,
         "bafs": 19,
         "chist": 20,
         "ths": 19,
-        "ict1": 20,
+        "ict1": 16,
         "va": 17
     },
     "group2": {
         "chem": 23,
-        "cscb": 14,
-        "cscp": 15,
-        "econ": 23,
-        "hist": 21,
-        "geog": 20,
+        "cscb": 12,
+        "cscp": 11,
+        "econ": 25,
+        "hist": 22,
+        "geog": 21,
         "ict2": 17
-    }
+    },
+    "fullList1": ["bio"],
+    "fullList2": ["econ"]
 }

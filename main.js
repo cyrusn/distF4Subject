@@ -14,6 +14,10 @@ var SubjectCombo      = require('./data/subjectCombo.json');
 var groupOneCapacity  = require('./data/subjectCapacity.json').group1;
 var groupTwoCapacity  = require('./data/subjectCapacity.json').group2;
 
+var fullList1 = require('./data/subjectCapacity.json').fullList1;
+var fullList2 = require('./data/subjectCapacity.json').fullList2;
+
+var firstFull = [];
 var groupOneOccupied = {
     "phy": 0,
     "bio": 0,
@@ -28,8 +32,8 @@ var groupTwoOccupied = {
     "cscb": 0,
     "cscp": 0,
     "econ": 0,
-    "geog": 0,
     "hist": 0,
+    "geog": 0,
     "ict2": 0
 };
 
@@ -81,8 +85,6 @@ function flattenData(sts) {
   obj.choices = choices;
   return obj;
 }
-
-
 
 // return the total number of a group
 // e.g. if you want to get total no of student in current group 1,CapacityOccupied// totalNumberInGroup(groupOnesubjectCapacityOccupied
@@ -153,6 +155,18 @@ function assignSubject(choices, n) {
     result.priority = n;
     counter(n);
     return result;
+  } else {
+    // var checkFirstFull = firstFull.x1.length <= 1 && firstFull.x2.length <= 1;
+    if(!isX1Available && _.indexOf(fullList1, subjects[0])== -1) {
+      if (_.indexOf(firstFull, subjects[0]) == -1) {
+        firstFull.push(subjects[0]);
+      }
+    }
+    if(!isX2Available && _.indexOf(fullList2, subjects[1])== -1) {
+      if (_.indexOf(firstFull, subjects[1]) == -1) {
+        firstFull.push(subjects[1]);
+      }
+    }
   }
 
   try {
@@ -267,3 +281,5 @@ json2csv({data: prepareJsonToCsvData(finalResult), fields: field}, function(err,
 
 // print statistic
 fs.writeFileSync("./result/statistic.md", genStat(true));
+
+console.log(firstFull);
