@@ -14,10 +14,10 @@ var SubjectCombo      = require('./data/subjectCombo.json');
 var groupOneCapacity  = require('./data/subjectCapacity.json').group1;
 var groupTwoCapacity  = require('./data/subjectCapacity.json').group2;
 
-var fullList1 = require('./data/subjectCapacity.json').fullList1;
-var fullList2 = require('./data/subjectCapacity.json').fullList2;
+var hiddenList1 = require('./data/subjectCapacity.json').hiddenList1;
+var hiddenList2 = require('./data/subjectCapacity.json').hiddenList2;
 
-var firstFull = [];
+var fullListInOrder = [];
 var groupOneOccupied = {
     "phy": 0,
     "bio": 0,
@@ -156,15 +156,15 @@ function assignSubject(choices, n) {
     counter(n);
     return result;
   } else {
-    // var checkFirstFull = firstFull.x1.length <= 1 && firstFull.x2.length <= 1;
-    if(!isX1Available && _.indexOf(fullList1, subjects[0])== -1) {
-      if (_.indexOf(firstFull, subjects[0]) == -1) {
-        firstFull.push(subjects[0]);
+    // var checkfullListInOrder = fullListInOrder.x1.length <= 1 && fullListInOrder.x2.length <= 1;
+    if(!isX1Available && _.indexOf(hiddenList1, subjects[0])== -1) {
+      if (_.indexOf(fullListInOrder, subjects[0]) == -1) {
+        fullListInOrder.push(subjects[0]);
       }
     }
-    if(!isX2Available && _.indexOf(fullList2, subjects[1])== -1) {
-      if (_.indexOf(firstFull, subjects[1]) == -1) {
-        firstFull.push(subjects[1]);
+    if(!isX2Available && _.indexOf(hiddenList2, subjects[1])== -1) {
+      if (_.indexOf(fullListInOrder, subjects[1]) == -1) {
+        fullListInOrder.push(subjects[1]);
       }
     }
   }
@@ -282,4 +282,5 @@ json2csv({data: prepareJsonToCsvData(finalResult), fields: field}, function(err,
 // print statistic
 fs.writeFileSync("./result/statistic.md", genStat(true));
 
-console.log(firstFull);
+console.log("Hidden Subject:".underline.yellow, hiddenList1, hiddenList2);
+console.log("list of first full data:\n".bold.red, fullListInOrder);

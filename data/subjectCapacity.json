@@ -17,6 +17,6 @@
         "geog": 21,
         "ict2": 17
     },
-    "fullList1": ["bio"],
-    "fullList2": ["econ"]
+    "hiddenList1": ["bio", "ths"],
+    "hiddenList2": ["econ"]
 }

@@ -22,6 +22,9 @@ this programme will only distribute subject to the student who *confirmed* the f
 `result.csv` and `statistic.md` will be generated in `./result` folder
 
 # Example
+
+## example of downloadData.json
+directly download from f4 subject selection system
 ```js
 // example of downloadData.json
 [{
@@ -83,8 +86,9 @@ this programme will only distribute subject to the student who *confirmed* the f
 ]
 ```
 
+## example of studentRank.csv
 ``` csv
-// example of studentRank.csv
+// `+` is used to define data as integer
 _id,rank+
 lp1234567,1
 lp1234576,2
@@ -92,3 +96,20 @@ lp1234675,3
 ...
 ```
 
+# Procedure in LPSS
+
+## Prepartion
+- each subjects can add 2 or minute 2 places.
+- VP need to declare of the max and min of each subjects
+
+## Algorithm of subject allocation
+1. take the mean of no of f3 students (with f4 repeater), and allocate the student evenly in `subjectCapacity.json`, places for f4 repeater should be reserved.(mean minutes no of repeat of each subjects)
+
+2. run `node main.js`
+
+3. `+1` capacity to the *first full* subject, then run `node main.js`.
+
+4. `-1` capacity to the subject which the allocation drop, if there are capacity of subject reach the max capacity of the subject, add the subject to `hiddenList` according to its group in `subjectCapacity.json`
+, then run `node main.js`
+
+5. repeat step 3 until any subject's capacity drop below the min.
