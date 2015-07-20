@@ -284,3 +284,4 @@ fs.writeFileSync("./result/statistic.md", genStat(true));
 
 console.log("Hidden Subject:".underline.yellow, hiddenList1, hiddenList2);
 console.log("list of first full data:\n".bold.red, fullListInOrder);
+console.log(statResult);
